@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dico Tommy</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+</head>
+	<div class="container">
+		<form class="form" name="form"   onsubmit="newResearch(); return false" autocomplete="off">
+			<input class="input" type="text" placeholder="Rechercher..."/>
+			<button class="submit" type="button"  onclick="newResearch()" href="">Rechercher</button>
+		</form>
+		<div class="results">
+				<div class="results-column">
+					<h2>Populaire</h2>
+					<div id="popular">
+					</div>
+				</div>
+				<div class="results-column">
+					<h2>Ordre alphabétique</h2>
+					<div id="alphabetical">
+					</div>
+				</div>
+		</div>
+
+
+		<div class="noresults">
+			<div class="create">
+				Nous ne trouvons pas votre mot dans notre base de données, peut-être avez-vous commis une faute ou alors voulez vous ajouter ce mot à notre dictionnaire afin d'en faire profiter les futurs utilisateurs.
+			<a  class='button-add' href="#" onclick="addword()">Ajouter le mot au dictionnaire</a>
+			</div>
+		</div>
+
+		<div class="add-word">
+			<div class="add-word-title">Ajout d'un nouveau mot dans le dictionnaire</div>
+			<input type="text" class="input-text" id="mot" placeholder='Mot'>
+			<label class="radio">
+				<input type="radio" name="gender" id="radioA" value="masculin">
+				<span class="text-radio">Masculin</span>
+			</label>
+			<label class="radio">
+				<input type="radio" name="gender" id="radioB" value="féminin">
+				<span class="text-radio">Féminin</span>
+			</label>
+			<input type="text" class="input-text" id="type" placeholder='Type'>
+			<textarea class="definition" id="desc" placeholder='Définition'></textarea>
+			<a  class='validation' href="#" onclick="addWord()">Valider</a>
+		</div>
+
+
+		<div class="worddef">
+		    <a  class='modify' href="#" id="" onclick="modWord(this.id)">Modifier</a>
+			<div class="worddef-title" id="infoA">Rédhibitoire</div>		
+			<div class="worddefinition"  id="infoB"></div>
+			<div class="wordsynonyme">Genre : <div id="infoC"></div></div>
+			<div class="wordantonyme">Type : <div id="infoD"></div></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/arbre.js"></script>
+	<script type="text/javascript" src="dico/dictionnaire.js"></script>
+</body>
+</html>

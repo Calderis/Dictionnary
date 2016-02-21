@@ -1,0 +1,149 @@
+AjouterMot(a:arbre,word:chaine,infos:objet)
+word: le mot que l'on veut ajouter dans l'arbre
+def: la définition du mot
+
+Début
+  Pour i = 0 ... Longueur(word)
+    letter = SousChaine(Mot,i,i+1)
+    Si a.letter != null alors a = a.letter
+    Sinon
+      a.letter = CréerNoeud(letter, a, i+1)
+      a = a.letter
+    FinSinon
+    Si i = Longueur(word)-1
+      a.infos.word = word
+      a.infos.def = desc
+      a.infos.gender = gender
+      a.infos.type = type
+    FinSi
+  FinPour
+Fin
+
+
+
+
+
+ChercherMot(a:arbre,word:chaine,level:entier):objet
+word: le mot recherché
+level: vaut 0 quand on appelle la fonction
+
+Début
+  Si a != null alors retourner faux
+  Si level >= Longueur(mot) alors
+    Si(a.info.def != '') a.info.view++
+      infos = {
+          word : word,
+          def : a.info.def,
+          type : a.info.type,
+          gender : a.info.gender
+        }
+      retourner infos
+    FinSi
+  FinSi
+  letter = Souschaine(word,level,level+1)
+  Si (a[letter] != null) retourner ChercherMot(a[letter], word, level+1)
+  retourner faux;
+Fin
+
+
+
+
+
+
+Alphab(a:arbre):tableau 
+listeMot: la liste des 5 premiers mots que l'on va renvoyé
+
+Début
+  listeMot =  InitialiserTableau()
+  S = InitialiserPile()
+  ajouter(Racine(A), S)
+  Tant que (S != Pilevide) {
+      nœud = premier(S)
+      retirer(S)
+      Si noeud.def != ''
+        ajouter(noeud.word,listeMot)
+      FinSi
+      Si Longueur(listeMot) = 5
+        retourner listeMot
+      FinSi
+      Si (noeud.a != null) Alors
+        ajouter(noeud.a, S)
+      FinSi
+      Si (noeud.b != null) Alors
+        ajouter(noeud.b, S)
+      FinSi
+      Si (noeud.c != null) Alors
+        ajouter(noeud.c, S)
+      FinSi
+      Si (noeud.d != null) Alors
+        ajouter(noeud.d, S)
+      FinSi
+      Si (noeud.e != null) Alors
+        ajouter(noeud.e, S)
+      FinSi
+      Si (noeud.f != null) Alors
+        ajouter(noeud.f, S)
+      FinSi
+      Si (noeud.g != null) Alors
+        ajouter(noeud.g, S)
+      FinSi
+      Si (noeud.h != null) Alors
+        ajouter(noeud.h, S)
+      FinSi
+      Si (noeud.i != null) Alors
+        ajouter(noeud.i, S)
+      FinSi
+      Si (noeud.j != null) Alors
+        ajouter(noeud.j, S)
+      FinSi
+      Si (noeud.k != null) Alors
+        ajouter(noeud.k, S)
+      FinSi
+      Si (noeud.l != null) Alors
+        ajouter(noeud.l, S)
+      FinSi
+      Si (noeud.m != null) Alors
+        ajouter(noeud.m, S)
+      FinSi
+      Si (noeud.n != null) Alors
+        ajouter(noeud.n, S)
+      FinSi
+      Si (noeud.o != null) Alors
+        ajouter(noeud.o, S)
+      FinSi
+      Si (noeud.p != null) Alors
+        ajouter(noeud.p, S)
+      FinSi
+      Si (noeud.q != null) Alors
+        ajouter(noeud.q, S)
+      FinSi
+      Si (noeud.r != null) Alors
+        ajouter(noeud.r, S)
+      FinSi
+      Si (noeud.s != null) Alors
+        ajouter(noeud.s, S)
+      FinSi
+      Si (noeud.t != null) Alors
+        ajouter(noeud.t, S)
+      FinSi
+      Si (noeud.u != null) Alors
+        ajouter(noeud.u, S)
+      FinSi
+      FinSi
+      Si (noeud.v != null) Alors
+        ajouter(noeud.v, S)
+      FinSi
+      Si (noeud.w != null) Alors
+        ajouter(noeud.w, S)
+      FinSi
+      Si (noeud.x != null) Alors
+        ajouter(noeud.x, S)
+      FinSi
+      Si (noeud.y != null) Alors
+        ajouter(noeud.y, S)
+      FinSi
+      Si (noeud.z != null) Alors
+        ajouter(noeud.z, S)
+      FinSi
+  Fin TantQue
+Fin
